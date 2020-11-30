@@ -129,9 +129,9 @@ void monteCarloMove (Board & board)
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
 
-    std::cout << "Children (moves from root) = " << root -> children.size() << "\nEstimated simulation count = " << numberOfSimulations << "\n";
+    std::cout << "Available moves = " << root -> children.size() << "\nEstimated simulation count = " << numberOfSimulations << "\n";
     std::cout << "Time elapsed: " << elapsed.count() << " s\n";
-    std::cout << "highestWinCount = " << highestWinCount << "\n";
+    std::cout << "highest Win Count = " << highestWinCount << "\n";
 
     board = bestChild -> gameState;
 }

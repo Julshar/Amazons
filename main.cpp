@@ -77,11 +77,11 @@ int main ()
         //std::cout << minimax(board, depth, true);         //WHITE PLAYER ALGORITHMS
         //std::cout << negamax(board, depth, 1);
         //alphaBeta(board, depth, alpha, beta, true);
-        iterativeDeepening (board, maxDepth, timeLimit);
+        //iterativeDeepening (board, maxDepth, timeLimit);
         //iterativeDeepeningRelentlessTimeLimit (board, maxDepth, relentlessTimeLimit);
         //manualInputMove (board);
         //PNS (board);
-        //monteCarloMove (board);
+        monteCarloMove (board);
 
         std::cout << "\n";
 
@@ -103,10 +103,10 @@ int main ()
         //std::cout << negamax(board, depth, -1);
         //alphaBeta(board, depth, alpha, beta, false);
         //iterativeDeepening (board, maxDepth, timeLimit);
-        iterativeDeepeningRelentlessTimeLimit (board, maxDepth, relentlessTimeLimit);
+        //iterativeDeepeningRelentlessTimeLimit (board, maxDepth, relentlessTimeLimit);
         //manualInputMove (board);
         //PNS (board);
-        //monteCarloMove (board);
+        monteCarloMove (board);
 
         std::cout << "\n";
 
