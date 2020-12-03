@@ -10,12 +10,13 @@
 #include "algorithms/IterativeDeepeningRigidTimeLimit.h"
 #include "algorithms/pns.h"
 #include "algorithms/monteCarlo.h"
+#include "algorithms/uctSearch.h"
 
 #include <iostream>
 // #include <vector> 
 // #include <stdlib.h>
 #include <ctime>
-// #include <limits>
+#include <limits>
 #include <chrono>
 // #include <string>
 
@@ -48,6 +49,10 @@ int main ()
 
     //PNS PRESET
     int blockLimit = 2;
+    double pnsTimeLimit = 2.0;
+
+    //UCT
+    double uctTimeLimit = 3.0;
 
     //board.generateRandomBoard();      //Uncomment to start from a random generated board
     //board.checkBlocks(board.white, blockLimit);
@@ -78,10 +83,10 @@ int main ()
         //std::cout << negamax(board, depth, 1);
         //alphaBeta(board, depth, alpha, beta, true);
         //iterativeDeepening (board, maxDepth, timeLimit);
-        //iterativeDeepeningRelentlessTimeLimit (board, maxDepth, relentlessTimeLimit);
-        //manualInputMove (board);
-        //PNS (board);
-        monteCarloMove (board);
+        //iterativeDeepeningRigidTimeLimit (board, maxDepth, relentlessTimeLimit);
+        //PNS (board, pnsTimeLimit);
+        //monteCarloMove (board);
+        uctSearch (board, uctTimeLimit);
 
         std::cout << "\n";
 
@@ -103,10 +108,10 @@ int main ()
         //std::cout << negamax(board, depth, -1);
         //alphaBeta(board, depth, alpha, beta, false);
         //iterativeDeepening (board, maxDepth, timeLimit);
-        //iterativeDeepeningRelentlessTimeLimit (board, maxDepth, relentlessTimeLimit);
-        //manualInputMove (board);
-        //PNS (board);
-        monteCarloMove (board);
+        //iterativeDeepeningRigidTimeLimit (board, maxDepth, relentlessTimeLimit);
+        //PNS (board, pnsTimeLimit);
+        //monteCarloMove (board);
+        uctSearch (board, uctTimeLimit);
 
         std::cout << "\n";
 

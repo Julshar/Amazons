@@ -121,7 +121,7 @@ int alphaBetaIterativeDeepeingTimeLimit (Board & board, int depth, int alpha, in
     }    
 }
 
-void iterativeDeepeningRelentlessTimeLimit (Board & board, int maxDepth, double timeLimit) //timeLimit is measured in seconds
+void iterativeDeepeningRigidTimeLimit (Board & board, int maxDepth, double timeLimit) //timeLimit is measured in seconds
 {
     bool outOfTime = false; //Determine if the algorithm ran out of time. If it did, do not take its "bestMove" under consideration
     Field bestMove [3];

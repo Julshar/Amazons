@@ -5,5 +5,4 @@
 #include <iostream>
 
 int estimateNumberOfSimulations (int numberOfMoves);
-void makeRandomMove (Node * node);
 void monteCarloMove (Board & board);
