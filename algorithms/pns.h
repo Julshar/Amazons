@@ -5,7 +5,6 @@
 #include <chrono>
 
 void evaluate (Node * node);
-bool resourcesAvailable (double timeElapsed);
 void setProofAndDisproofNumbers (Node * node);
 Node * selectMostProvidingNode (Node * node);
 Node * selectFinalMove (Node * root);

@@ -57,15 +57,6 @@ void evaluate (Node * node) // DETERMINE IF NODE IS WINNING, LOSING OR (most lik
     }
 }
 
-bool resourcesAvailable (double timeElapsed)
-{
-    if (timeElapsed > 2.0)
-    {
-        return false;
-    }
-    return true;
-}
-
 void setProofAndDisproofNumbers (Node * node)
 {
     if (node -> isExpanded)
@@ -207,7 +198,7 @@ Node * updateAncestors (Node * node, Node * root)
     return root;
 }
 
-void PNS (Board & board)
+void PNS (Board & board, double timeLimit)
 {
     auto start = std::chrono::high_resolution_clock::now(); //TIME
 
@@ -226,7 +217,7 @@ void PNS (Board & board)
     auto finish = std::chrono::high_resolution_clock::now(); //TIME
     std::chrono::duration<double> elapsed = finish - start;
 
-    while (root -> proof != 0 && root -> disproof != 0 && resourcesAvailable(elapsed.count()))
+    while (root -> proof != 0 && root -> disproof != 0 && timeLeft(elapsed.count(), timeLimit))
     {
         Node * mostProviding = selectMostProvidingNode (current);
         expandNode (mostProviding);
@@ -241,7 +232,7 @@ void PNS (Board & board)
 
     if (elapsed.count() > 2.0)
     {
-        iterativeDeepeningRelentlessTimeLimit (board, 3, 0.3);
+        iterativeDeepeningRigidTimeLimit (board, 3, 0.3);
     }
     else
     {

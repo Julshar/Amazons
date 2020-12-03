@@ -24,29 +24,6 @@ int estimateNumberOfSimulations (int numberOfMoves)
         return 0;
 }
 
-void makeRandomMove (Node * node)
-{
-    Possible_Moves moves (node -> gameState);
-    moves.getMoves();
-
-    int r1 = (rand() % moves.from.size());
-    bool isBlocked = true; //Chosen amazon might be blocked, but still has its instance in vector "from".
-    while (isBlocked)
-    {
-        if (moves.to[r1].size() > 0)
-        {
-            isBlocked = false;
-        }
-        else
-        {
-            r1 = (rand() % moves.from.size());
-        }
-    }
-    int r2 = (rand() % moves.to[r1].size());
-    int r3 = (rand() % moves.arrowTo[r1][r2].size());
-    node -> gameState.makeMove(moves.from[r1], moves.to[r1][r2], moves.arrowTo[r1][r2][r3]);
-}
-
 void monteCarloMove (Board & board)
 {
     auto start = std::chrono::high_resolution_clock::now();
