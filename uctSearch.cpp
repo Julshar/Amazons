@@ -42,7 +42,6 @@ Node * selectCurrentNode (Node * node)
     {
         if (!(node -> fullyExpanded))
         {
-            //std::cout << "GOING TO RETURN selectNewRandomChild\n";
             return selectNewRandomChild (node);
         }
         else
@@ -77,7 +76,7 @@ int runRandomSimulation (Node node) //Returns 1 (win) whenever the player who ma
 
     while (!isLeaf)
     {
-        makeRandomMove(&node); //MIGHT BE POINTER ERROR
+        makeRandomMove(&node);
         if (node.gameState.whitePlays) //White is playing now, so black made last move
         {
             if (node.gameState.checkDefeat(node.gameState.white)) //If true, white lost
